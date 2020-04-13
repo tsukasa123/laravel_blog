@@ -28,6 +28,9 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <img src="{{ asset('storage/'. Auth::user()->profile->avatar) }}" 
+                                alt="{{ Auth::user()->name }}" height="50px" width="50px" style="border-radius: 50%"
+                                class="profile-image img-circle">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 

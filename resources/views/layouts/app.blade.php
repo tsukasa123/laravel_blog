@@ -51,6 +51,9 @@
                             <li class="list-group-item">
                                 <a href="{{ route('setting.index') }}">Settings</a>
                             </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('user.profile') }}">My Profile</a>
+                            </li>
                         </ul>
                     </div>
                     @endif

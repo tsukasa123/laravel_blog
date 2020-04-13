@@ -60,7 +60,7 @@ class SettingController extends Controller
      */
     public function edit(Setting $setting)
     {
-        //
+        
     }
 
     /**

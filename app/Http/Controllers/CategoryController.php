@@ -83,7 +83,7 @@ class CategoryController extends Controller
             'name' => 'required',
         ]);
 
-        $category = new Category();
+        // $category = new Category();
         $category->name = $request->name;
         $category->save();
 
