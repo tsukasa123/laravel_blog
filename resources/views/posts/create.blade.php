@@ -32,6 +32,25 @@
                 <textarea name="description" cols="30" row="30" class="form-control">{{ isset($post)? $post->description : '' }}</textarea>
             </div>
             <div class="form-group">
+                <label for="category">Select a category</label>
+                <select name="category_id" id="category" class="form-control">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach 
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tags">Select tags</label>
+                    @foreach($tags as $tag)
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="tags[]" value="{{$tag->id}}">{{$tag->tag}}</label>
+                        </div>
+                    @endforeach 
+                </select>
+            </div>
+            
+
+            <div class="form-group">
                 <label>Featured Image</label>
                 <input type="file" name="featured_img" class="form-control-file">
             </div>

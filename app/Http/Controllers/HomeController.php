@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = User::find(Auth::id())->posts;
+        return view('dashboard')->with('posts', $posts);
         // ->with('user', Auth::user());
     }
 }

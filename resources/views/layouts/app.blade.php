@@ -33,11 +33,22 @@
                 <div class="row justify-content-center">
                     <div class="col-md-3">
                         <ul class="list-group">
+
+        
+                            <li class="list-group-item">
+                                <a href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
                             <li class="list-group-item">
                                 <a href="{{ route('category.create') }}">Create Category</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('category.index') }}">All Categories</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('tag.create') }}">Create Tag</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('tag.index') }}">All Tags</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('post.index') }}">Posts</a>
@@ -49,11 +60,21 @@
                                 <a href="{{ route('post.trashed') }}">Trashed Post</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('setting.index') }}">Settings</a>
-                            </li>
-                            <li class="list-group-item">
                                 <a href="{{ route('user.profile') }}">My Profile</a>
                             </li>
+
+                            @if(Auth::user()->admin)
+                                <li class="list-group-item">
+                                    <a href="{{ route('users') }}">Users</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('user.create') }}">Add User</a>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <a href="{{ route('setting.index') }}">Settings</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     @endif

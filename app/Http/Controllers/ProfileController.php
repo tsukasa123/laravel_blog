@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Session;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -16,7 +17,6 @@ class ProfileController extends Controller
     public function update(Request $request){
         $this->validate($request,[
             'name' => 'required',
-            // 'avatar' => 'required|image',
             'email' => 'required|email',
             'facebook' => 'required|url',
             'youtube' => 'required|url'

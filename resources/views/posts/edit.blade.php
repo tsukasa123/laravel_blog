@@ -27,6 +27,20 @@
                 <textarea name="description" cols="30" row="30" class="form-control"></textarea>
             </div>
             <div class="form-group">
+                <label for="tags">Select tags</label>
+                    @foreach($tags as $tag)
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="tags[]" value="{{$tag->id}}"
+                                @foreach($post->tags as $ta)
+                                    @if($tag->id == $ta->id)
+                                        checked
+                                    @endif
+                                @endforeach
+                                >{{$tag->tag}}</label>
+                        </div>
+                    @endforeach 
+                </div>
+            <div class="form-group">
                 <label>Featured Image</label>
                 <input type="file" name="featured_img" class="form-control-file">
             </div>

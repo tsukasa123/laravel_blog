@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card">
-    <div class="card-header">Edit your profile</div>
+    <div class="card-header bg-primary text-light">Edit your profile</div>
 
     <div class="card-body">
 
@@ -50,9 +50,6 @@
         </form>     
     </div>
 </div>
-
-
-
 
 
 @endsection

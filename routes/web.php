@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'uses' => 'FrontendController@index',
+    'as' => 'index'
+]);
 
 Route::resource('post', 'PostController');
 // Route::resource('post', 'PostController')->middleware('auth');
@@ -50,7 +51,45 @@ Route::resource('setting', 'SettingController');
 
 Route::resource('category', 'CategoryController');
 
+/*
+|--------------------------------------------------------------------------
+| FrontendController
+|--------------------------------------------------------------------------
+*/
 
+Route::get('/single-category/{category}', [
+    'uses' => 'FrontendController@category',
+    'as' => 'category.single'
+]);
+
+Route::get('/single-post/{slug}',[
+    'uses' => 'FrontendController@single_post',
+    'as' => 'post.single'
+]);
+
+Route::get('/results', [
+    'uses' => 'FrontendController@search',
+    'as' => 'search.results'
+]);
+
+Route::post('/subscribe', [
+    'uses' => 'FrontendController@subscribe',
+    'as' => 'subscribe'
+]);
+
+Route::get('/tags/{id}', [
+    'uses' => 'FrontendController@tag',
+    'as' => 'tag.single'
+]);
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| ProfileController
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/user/profile', [
     'uses' => 'ProfileController@index',
@@ -62,10 +101,53 @@ Route::post('/user/profile/update', [
     'as' => 'user.profile.update'
 ]);
 
+/*
+|--------------------------------------------------------------------------
+| TagController
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('tag', 'TagController');
+
+/*
+|--------------------------------------------------------------------------
+| UsersController
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/user/admin/{id}', [
+    'uses' => 'UsersController@admin',
+    'as' => 'user.admin'
+]);
+
+Route::get('/user/not-admin/{id}', [
+    'uses' => 'UsersController@not_admin',
+    'as' => 'user.not_admin'
+]);
+
+Route::get('/user/delete/{user}', [
+    'uses' => 'UsersController@destroy',
+    'as' => 'user.delete'
+]);
+
+Route::get('/user', [
+    'uses' => 'UsersController@index',
+    'as' => 'users'
+]);
+
+Route::get('/user/create', [
+    'uses' => 'UsersController@create',
+    'as' => 'user.create'
+]);
+
+Route::get('/user/store', [
+    'uses' => 'UsersController@store',
+    'as' => 'user.store'
+]);
 
 
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
