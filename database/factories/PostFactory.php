@@ -14,5 +14,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'slug' => Str::slug($title),
         'description' => $faker->paragraph(3),
         'featured_image' => 'sample.jpg',
+        'category_id' => '17'
     ];
 });
