@@ -62,7 +62,7 @@ Route::get('/single-category/{category}', [
     'as' => 'category.single'
 ]);
 
-Route::get('/single-post/{slug}',[
+Route::get('/single-post/{slug}', [
     'uses' => 'FrontendController@single_post',
     'as' => 'post.single'
 ]);
