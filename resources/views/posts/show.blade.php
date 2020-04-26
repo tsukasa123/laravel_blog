@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-body">
             <div class="card-title text-center font-weight-bold"> {{ $post->title }}</div>
-            <img src="{{ asset('storage/'.$post->featured_image) }}" alt="{{ $post->title }}"
+            <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}"
             width="100%" height="250px">
             <p class="card-text mt-3">{{ $post->description }}</p>
             <p>Category: {{ $post->category->name }}</p>

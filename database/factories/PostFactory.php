@@ -13,7 +13,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $title,
         'slug' => Str::slug($title),
         'description' => $faker->paragraph(3),
-        'featured_image' => 'sample.jpg',
+        'featured_image' => 'uploads/products/sample.JPG',
         'category_id' => '0',
         'user_id' => '0'  
     ];

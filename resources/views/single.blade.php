@@ -19,7 +19,7 @@
                 <article class="hentry post post-standard-details">
 
                     <div class="post-thumb">
-                        <img src="{{ asset('storage/'.$post->featured_image) }}" alt="{{ $post->title }}">
+                        <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}">
                     </div>
 
                     <div class="post__content">
@@ -89,7 +89,7 @@
                 <div class="blog-details-author">
 
                     <div class="blog-details-author-thumb">
-                        <img src="{{ asset('storage/'.$post->user->profile->avatar) }}" alt="Author" style="width:100px; height: 100px; border-radius:50%">
+                        <img src="{{ asset($post->user->profile->avatar) }}" alt="Author" style="width:100px; height: 100px; border-radius:50%">
                     </div>
 
                     <div class="blog-details-author-content">
