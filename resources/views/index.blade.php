@@ -241,7 +241,7 @@
                     </div>
                 </div>
                 <div class="padded-50"></div>
-                <div class="offers">
+                {{-- <div class="offers">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                             <div class="heading">
@@ -269,8 +269,8 @@
                             @endforeach
                         </div>
                     </div>
-                </div>
-                <div class="padded-50"></div>
+                </div> --}}
+                {{-- <div class="padded-50"></div> --}}
                 <div class="offers">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
