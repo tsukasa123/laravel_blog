@@ -53,7 +53,7 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ asset('storage/' . $first_post->featured_image) }}" alt="{{ $first_post->title }}" style="width: 100%; height: 250px;">
+                            <img src="{{ asset($first_post->featured_image) }}" alt="{{ $first_post->title }}" style="width: 100%; height: 250px;">
                             <div class="overlay"></div>
                             <a href="app/img/post1.jpg" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
@@ -107,7 +107,7 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ asset('storage/'.$second_post->featured_image) }}" alt="{{ $second_post->title }}" style="width:100%; height:250px;">
+                            <img src="{{ asset($second_post->featured_image) }}" alt="{{ $second_post->title }}" style="width:100%; height:250px;">
                             <div class="overlay"></div>
                             <a href="" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
@@ -157,7 +157,7 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="{{ asset('storage/'.$third_post->featured_image) }}" alt="{{ $third_post->title }}" style="width:100%; heigth:250px;">
+                            <img src="{{ asset($third_post->featured_image) }}" alt="{{ $third_post->title }}" style="width:100%; heigth:250px;">
                             <div class="overlay"></div>
                             <a href="app/img/3.jpg" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
@@ -229,7 +229,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div class="case-item">
                                         <div class="case-item__thumb">
-                                            <img src="{{ asset('storage/' . $post->featured_image) }}" alt="our case">
+                                            <img src="{{ asset($post->featured_image) }}" alt="our case">
                                         </div>
                                         <h6 class="case-item__title">
                                             <a href="{{ route('post.single', [$post->slug]) }}">{{ $post->title }}</a>
@@ -259,7 +259,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div class="case-item">
                                         <div class="case-item__thumb">
-                                            <img src="{{ asset('storage/' . $post->featured_image) }}" alt="our case">
+                                            <img src="{{ asset($post->featured_image) }}" alt="our case">
                                         </div>
                                         <h6 class="case-item__title">
                                             <a href="{{ route('post.single', [$post->slug]) }}">{{ $post->title }}</a>

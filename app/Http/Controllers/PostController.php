@@ -60,7 +60,8 @@ class PostController extends Controller
         //store into db
         $featured = $request->featured_img;
         $featured_new_name = time().$featured->getClientOriginalName();
-        Storage::disk('public')->put($featured_new_name, file_get_contents($featured));
+        $post->move('uploads/products/',$featured_new_name);
+        // Storage::disk('public')->put($featured_new_name, file_get_contents($featured));
 
         $user_id = Auth::id();
 
@@ -69,7 +70,7 @@ class PostController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'description' => $request->description,
-            'featured_image' => $featured_new_name,
+            'featured_image' => 'uploads/products/'.$featured_new_name,
             'category_id' => $request->category_id,
             'user_id' => $user_id
         ]);
@@ -127,8 +128,11 @@ class PostController extends Controller
         if($request->hasFile('featured_img')){
             $featured = $request->featured_img;
             $featured_new_name = time().$featured->getClientOriginalName();
-            Storage::disk('public')->put($featured_new_name, file_get_contents($featured));
-            $post->featured_image = $featured_new_name;
+            $featured->move('uploads/products/', $featured_new_name);
+            $post->featured_image = 'uploads/products/'.$featured_new_name;
+            $post->save();
+            // Storage::disk('public')->put($featured_new_name, file_get_contents($featured));
+            // $post->featured_image = $featured_new_name;
         }
 
         // $post->title = $request->title;
